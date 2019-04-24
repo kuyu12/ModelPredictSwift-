@@ -10,11 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var touchDrawView: TouchDrawView!
+    @IBOutlet weak var predictLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setUI()
     }
-
-
+    
+    private func setUI() {
+        touchDrawView.setWidth(3)
+    }
+    
+    @IBAction func onPredictPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func onClearButtonPressed(_ sender: Any) {
+        touchDrawView.clearDrawing()
+    }
 }
 
