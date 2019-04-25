@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
     
     var model : VNCoreMLModel? = {
-        return try? VNCoreMLModel(for: coreml_model().model)
+        return try? VNCoreMLModel(for: alphabets().model)
     }()
     
     lazy var classificationRequest: VNCoreMLRequest? = {
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     
     @IBAction func onPredictPressed(_ sender: Any) {
         print("onPredictPressed")
-        guard let image = ModelUtils.captureView(touchDrawView)?.cgImage else {return}
+        guard let image = touchDrawView.asImage().cgImage else {return}
 
         let handler = VNImageRequestHandler(cgImage: image)
         do {
